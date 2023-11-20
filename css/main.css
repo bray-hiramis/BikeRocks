@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+:root {
+    --primary-color: #0e2954;
+    --secondary-color: #1f6e8c;
+    --third-color: #2e8a99;
+    --light-color: #84a7a1;
+    --dark-color: #333;
+    --logo-color-dark: #253a47;
+    --logo-color-light: #66a3bb;
+
+    --pad-large: 40px;
+    --pad-mid: 25px;
+    --pad-small: 15px;
+
+    --pad-large-vr: 40px 0;
+    --pad-mid-vr: 25px 0;
+    --pad-small-vr: 15px 0;
+
+    --margin-large-bottom: 0 0 40px 0;
+    --margin-mid-bottom: 0 0 25px 0;
+    --margin-small-bottom: 0 0 15px 0;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body {
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+    background: var(--primary-color);
+    color: var(--light-color);
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: var(--light-color);
+    display: inline-block;
+}
+
+i {
+    cursor: pointer;
+}
+
+i:hover {
+    opacity: .9;
+}
+
+input {
+    width: 100%;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+img {
+    width: 100%;
+    display: inline-block;
+}
+/* End of Reset */
+
+/* Header: Logo + Navigation */
+.header-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--pad-large);
+    flex-wrap: wrap;
+}
+
+#home-header .header-items .logo {
+    display: flex;
+    align-items: center;
+    transition: all .5s ease-out;
+}
+
+#home-header .header-items .logo:hover {
+    transform: scale(1.2) rotate(360deg);
+}
+
+#home-header .header-items .logo > h1 {
+    font-size: 1.5rem;
+}
+
+#home-header .header-items .logo > img {
+    width: 45px;
+}
+
+#home-header .header-items .main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#home-header .header-items .main-nav ul li a {
+    padding: 10px 20px;
+    font-size: .85rem;
+    transition: all .5s ease-out;
+}
+
+#home-header .header-items .main-nav ul li a:hover {
+    transform: scale(1.2);
+    border-bottom: 1px var(--logo-color-light) solid;
+    color: var(--logo-color-light);
+}
+/* End of Header: Logo + Navigation */
+
+/* Showcase */
+#showcase {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(300px, auto);
+    text-align: center;
+}
+
+.showcase {
+    padding: var(--pad-large);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #fff;
+    position: relative;
+}
+
+.showcase * {
+    z-index: 2;
+}
+
+.showcase::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-color);
+    opacity: .5;
+}
+
+.showcase-card-1 {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 2;
+    background: url('../img/showcase-1.jpg') no-repeat center center/cover;
+}
+.showcase-card-2 {
+    background: url('../img/showcase-2.jpg') no-repeat center center/cover;
+}
+.showcase-card-3 {
+    background: url('../img/showcase-3.jpg') no-repeat center center/cover;
+}
+.showcase-card-4 {
+    background: url('../img/showcase-4.jpg') no-repeat center center/cover;
+}
+/* End of Showcase */
+
+/* Bike Frames, Parts, Accessories, and Apparel */
+#shop-section .shop-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(300px, auto);
+    gap: 2rem;
+    padding: var(--pad-large);
+}
+
+.shop {
+    /* padding: var(--pad-small);
+    border: 2px var(--light-color) solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all .3s ease-out;
+}
+
+.shop img {
+    width: 100%;
+    height: 100%;
+    margin: var(--margin-small-bottom);
+    object-fit: cover;
+}
+
+.shop:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.shop:hover:nth-child(1),
+.shop:hover:nth-child(8),
+.shop:hover:nth-child(15),
+.shop:hover:nth-child(19) {
+    transform: none;
+    cursor: auto;
+}
+
+
+.shop-1,
+.shop-8,
+.shop-15,
+.shop-19 {
+    grid-column: 1 / span 3;
+    border-bottom: 1px var(--logo-color-light) solid;
+}
+
+.shop-20 {
+    grid-column: 1 / span 2;
+    background: url('../img/apparel-1.jpg') no-repeat center top/cover;
+    position: relative;
+    color: #fff;
+    align-items: flex-start;
+    padding: var(--pad-mid);
+}
+
+.shop-20::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark-color);
+    opacity: 0.5;
+}
+
+.shop-20 * {
+    z-index: 6;
+}
+
+.shop-21 {
+    grid-column: 1 / span 2;
+    background: url('../img/apparel-2.jpg') no-repeat center top/cover;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    padding: var(--pad-mid);
+}
+
+.shop-21::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark-color);
+    opacity: 0.5;
+}
+
+.shop-21 * {
+    z-index: 5;
+}
+
+.shop-21 {
+    grid-column: 3 / 4;
+}
+
+/* Footer */
+#main-footer {
+    background: var(--light-color);
+    color: var(--dark-color)
+}
+
+#main-footer .footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(70px, auto);
+    justify-content: center;
+    align-items: center;
+    padding: var(--pad-large);
+}
+
+#main-footer .footer p {
+    font-size: .80rem;
+    padding-bottom: var(--pad-small);
+}
+
+.footer-1,
+.footer-2,
+.footer-3,
+.footer-4 {
+    padding: var(--pad-small);
+}
+
+.logo-footer {
+    display: flex;
+    align-items: center;
+}
+
+.logo-footer > img {
+    width: 90px;
+}
+
+.footer-1 h4,
+.footer-2 h4,
+.footer-3 h4 {
+    padding-bottom: var(--pad-small);
+}
+
+.footer-2 input {
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+}
+
+.footer-2 input:focus {
+    outline: 2px var(--third-color) solid;
+}
+
+.footer-3 {
+    text-align: center;
+}
+
+.footer-3 i {
+    padding: var(--pad-small);
+}
+
+.footer-4 {
+    grid-column: 1 / span 3;
+    text-align: center;
+}

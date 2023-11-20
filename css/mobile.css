@@ -1,0 +1,42 @@
+@media only screen and (max-width: 800px) {
+
+    .header-items {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .showcase-card-1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #shop-section .shop-content {
+        grid-template-columns: 1fr;
+    }
+
+    .shop {
+        grid-column: 1;
+    }
+
+    .shop img {
+        width: 400px;
+        height: 400px;
+    }
+
+    .footer .footer-card {
+        grid-column: 1 / span 3;
+        border-bottom: 1px var(--dark-color) solid;
+    }
+
+    .footer .footer-card:last-child {
+        border-bottom: none;
+    }
+
+    .logo-footer {
+        justify-content: center;
+    }
+}
